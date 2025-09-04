@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tebrikler</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: #0f172a;
+      color: #e5e7eb;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: rgba(17, 24, 39, .9);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+      max-width: 540px;
+      width: 92%;
+      box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+    p {
+      color: #9ca3af;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ef4444;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    button:hover {
+      background: #dc2626;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="title">Tebrikler!</h1>
+    <p id="msg">
+      Tebrikler profil sahibine gizli mesajın iletildi.<br>
+      Unutma doğru olanı yaptın, bunun için mükafatlandırılacaksın.
+    </p>
+    <button id="cancelBtn">İptal</button>
+  </div>
+
+  <script>
+    document.getElementById("cancelBtn").addEventListener("click", function(){
+      document.getElementById("title").textContent = "İşlem Başarısız";
+      document.getElementById("msg").textContent = 
+        "Maalesef, istediğin gerçekleştirilemedi. " +
+        "Geri alabilmen için dm atman veya profil sahibini araman gerekir.";
+      this.style.display = "none"; // butonu gizle
+    });
+  </script>
+</body>
+</html>
